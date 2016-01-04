@@ -93,7 +93,7 @@
 			<a href="single.html">
 	         <div class="banner-matter">
 						<div class="col-md-5 banner-bag">
-							<img class="img-responsive " src="assets/site/images/bag.jpg" alt=" " />
+							<img class="img-responsive " src="assets/site/images/s2.jpg" alt=" " />
 							</div>
 							<div class="col-md-7 banner-off">							
 								<h2>FLAT 50% 0FF</h2>
@@ -110,7 +110,7 @@
 			<a href="single.html">
 	         <div class="banner-matter">
 						<div class="col-md-5 banner-bag">
-							<img class="img-responsive " src="assets/site/images/bag.jpg" alt=" " />
+							<img class="img-responsive " src="assets/site/images/s3.jpg" alt=" " />
 							</div>
 							<div class="col-md-7 banner-off">							
 								<h2>FLAT 50% 0FF</h2>
