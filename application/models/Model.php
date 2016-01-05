@@ -100,6 +100,18 @@ class Model extends CI_Model {
 	function TotalKat(){
 		return $this->db->query("select count(*) as totalkategori from tb_produk group by id_kat; ");
 	}
+
+	public function Kategori() {
+		$Kat = $this->db->from('tb_kategori')
+						->get();
+		return $Kat->result_array();
+	}
+
+	function per_categori($cat) {
+	$this->db->where('id_kat',$cat);
+	$query=$this->db->get('tb_produk');
+	return $query->result();		
+	}
 }
 
 /* End of file model.php */

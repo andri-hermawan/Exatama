@@ -105,13 +105,17 @@ class Site extends CI_Controller {
 		}
 	}
 
-	function sidebar_kat(){
-		$data = array(
-			"total_kat" => $this->model->TotalKat('')->result_array(),
-			"total_merk" => $this->model->GetProduk('group by id_merk')->num_rows(),
-			"kategoriq" => $this->model->GetKat()->result_array(),
-			"merk" => $this->model->GetMerk()->result_array(),
-			);
-		return $this->load->view("layout/slidebar", $data, TRUE);
+	public function category() {
+		$id_k		= $this->uri->segment(3);
+		$data['data']	= $this->model->per_categori($id_kat);
+		
+
+		$data['page_title'] = 'Category';
+		$this->load->view('layout/header',$data);
+		$this->load->view('site/category', $data);
+		$this->load->view('layout/slidebar', $data);
+		$this->load->view('layout/footer', $data);
 	}
+
+
 }

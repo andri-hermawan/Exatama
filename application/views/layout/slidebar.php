@@ -32,12 +32,15 @@
 		</li> -->
 				
 		<ul class="kid-menu ">
-				
-				<li><a href="product.html">Faciisis ornare</a></li>
-				<li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
+				<?php 
+							$Kat = $this->model->Kategori();
+							foreach ($Kat as $i) { ?>
+				<li><a href="<?php echo base_url(); ?>site/category/<?php echo $i['id_kat']; ?>"><?php echo $i['kategori']; ?></a></li>
+				<?php } ?>
 			</ul>
 	</ul>
 					</div>
+					
 					</br>
 
 					<div class=" top-nav rsidebar span_1_of_left">
