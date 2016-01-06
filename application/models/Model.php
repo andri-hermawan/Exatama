@@ -108,9 +108,23 @@ class Model extends CI_Model {
 	}
 
 	function per_categori($cat) {
-	$this->db->where('id_kat',$cat);
-	$query=$this->db->get('tb_produk');
-	return $query->result();		
+		$this->db->where('id_kat',$cat);
+		$query=$this->db->get('tb_produk');
+
+		return $query->result();		
+	}
+
+	public function Merek() {
+		$Merk = $this->db->from('tb_merk')
+						->get();
+		return $Merk->result_array();
+	}
+
+	function per_merk($mer) {
+		$this->db->where('id_merk',$mer);
+		$query=$this->db->get('tb_merk');
+
+		return $query->result();		
 	}
 }
 
