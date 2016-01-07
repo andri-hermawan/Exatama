@@ -1,3 +1,4 @@
+<?php foreach($data_setting as $row) { ?>
 <div class="footer">
 		<div class="footer-top">
 			<div class="container">
@@ -14,9 +15,9 @@
 				<div class="latter-right">
 					<p>FOLLOW US</p>
 					<ul class="face-in-to">
-						<li><a href="#"><span> </span></a></li>
+						<li><a href="<?php echo $row['twitter']; ?>"><span> </span></a></li>
 						<!-- <li><a href="#"><span> </span></a></li> -->
-						<li><a href="#"><span class="facebook-in"> </span></a></li>
+						<li><a href="<?php echo $row['facebook']; ?>"><span class="facebook-in"> </span></a></li>
 						<div class="clearfix"> </div>
 					</ul>
 					<div class="clearfix"> </div>
@@ -27,12 +28,13 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="footer-bottom-cate">
-					<h6>Information</h6>
+					<h6><?php echo $row['judul_blog']; ?></h6>
 					<ul>
 						<li><a href="#">Curabitur sapien</a></li>
 						<li><a href="#">Dignissim purus</a></li>
 						
 					</ul>
+
 				</div>
 				<div class="footer-bottom-cate bottom-grid-cat">
 					<h6>Portfolio</h6>
@@ -50,20 +52,21 @@
 					</ul>
 				</div>
 				<div class="footer-bottom-cate cate-bottom">
-					<h6>OUR ADDRESS</h6>
+					<h6><?php echo $row['information']; ?></h6>
 					<ul>
-						<li>Aliquam metus  dui. </li>
+						<!-- <li>Aliquam metus  dui. </li>
 						<li>orci, ornareidquet</li>
 						<li> ut,DUI.</li>
 						<li>nisi, dignissim</li>
 						<li>gravida at.</li>
-						<li class="phone">PH : 6985792466</li>
-						<li class="temp"><p>&copy 2015 Bigshope. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
+						<li class="phone">PH : 6985792466</li> -->
+						<li class="temp"><p>&copy 2015 inspirasibaduy.com<a href="http://w3layouts.com/" target="_blank"></a> </p></li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 </body>
 </html>

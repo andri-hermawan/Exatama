@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<?php $this->load->view('incsite/slider'); ?>
 				 
 	   		     <div class="shoes-grid-left">
-			<a href="single.html">				 
+						 
 	   		     	<?php $this->load->view('incsite/produk'); ?>
 				 
 	   		   </div> 

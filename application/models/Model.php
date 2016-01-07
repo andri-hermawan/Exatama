@@ -10,6 +10,10 @@ class Model extends CI_Model {
 		
 	}
 
+	function GetSetting(){
+		return $this->db->query("select * from setting;");
+	}
+
 	//ambil data user
 	function GetUser($data) {
         $query = $this->db->get_where('tb_login', $data);

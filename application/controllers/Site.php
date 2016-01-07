@@ -11,6 +11,7 @@ class Site extends CI_Controller {
 	public function index($offset=0)
 	{
 		$this->countervisitor();
+		
 		/* Pagination */
 		$config['uri_segment'] = 3;
 		$config['base_url'] = base_url().'site/index';
@@ -18,8 +19,14 @@ class Site extends CI_Controller {
 		$config['per_page'] = 6;
 
 		/*============================== ambil query database ==================*/
-		$data['data_produk']=$this->model->GetProduk("where tb_produk.status = 'publish' group by tb_produk.id_produk order by tb_produk.id_produk desc limit ".$config['per_page']." offset ".$offset)->result_array();
-		$data['rekomen'] = $this->model->GetProduk("where status = 'publish' order by rand() limit 3")->result_array();
+		$data = array(
+		'data_produk'=>$this->model->GetProduk("where tb_produk.status = 'publish' group by tb_produk.id_produk order by tb_produk.id_produk desc limit ".$config['per_page']." offset ".$offset)->result_array(),
+		'rekomen' => $this->model->GetProduk("where status = 'publish' order by rand() limit 2")->result_array(),
+		'data_setting' => $this->model->GetSetting()->result_array(),
+		// 'facebook' => $data_setting[0]['facebook'],
+		// 'fb_fans_page' => $data_setting[0]['facebook_fans_page'],	
+		// 'twitter' => $data_setting[0]['twitter'],	
+		);
 		/*======================================================================*/
 
                 // CSS Bootstrap               
@@ -64,8 +71,10 @@ class Site extends CI_Controller {
 	function detail($id_produk = '', $kode = 0)
 	{
 		$this->countervisitor();
-		$data['data_produk']=$this->model->GetDetailProduk("where tb_produk.id_produk='$kode'")->result_array();
-
+		$data = array(
+		"data_produk"=>$this->model->GetDetailProduk("where tb_produk.id_produk='$kode'")->result_array(),
+		"data_setting" => $this->model->GetSetting()->result_array(),
+		);
 		// $data_content =  $this->blog_model->GetContentBlog("where content.kode_content = '$kode'")->result_array();
 		$datas = array(
 			"sidebar" => $this->sidebar_kat(),
@@ -89,8 +98,9 @@ class Site extends CI_Controller {
 		if ($cek->num_rows() > 0) {
 			$data = array(
 				"data_produk" => $this->model->GetProduk("where tb_produk.status = 'publish' and id_kat = '$id' limit ".$config['per_page']." offset ".$offset)->result_array(),
-				"rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 3")->result_array(),
+				"rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 2")->result_array(),
 				"sidebar" => $this->sidebar_kat(),
+				"data_setting" => $this->model->GetSetting()->result_array(),
 				);
 
 		 // CSS Bootstrap               
@@ -136,6 +146,7 @@ class Site extends CI_Controller {
 			$data = array(
 				"data_produk" => $this->model->GetProduk("where tb_produk.status = 'publish' and id_merk = '$id' limit ".$config['per_page']." offset ".$offset)->result_array(),
 				"rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 3")->result_array(),
+				"data_setting" => $this->model->GetSetting()->result_array(),
 				);
 
 		 // CSS Bootstrap               

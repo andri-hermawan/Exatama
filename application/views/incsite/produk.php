@@ -1,31 +1,21 @@
-<div class="col-md-6 con-sed-grid">
-					
-	   		     		<div class=" elit-grid"> 
-						
-		   		     		<h4>consectetur  elit</h4>
-		   		     		<label>FOR ALL PURCHASE VALUE</label>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
-							<span class="on-get">GET NOW</span>						
-						</div>						
-						<img class="img-responsive shoe-left" src="<?php echo base_url(); ?>assets/site/images/sh.jpg" alt=" " />
-							
-						<div class="clearfix"> </div>
-						
-	   		     	</div>
-					</a>
-					<a href="single.html">	
+
+					<?php foreach($rekomen as $row) { ?>
+					<a href="<?php echo base_url(); ?>site/detail/<?php echo $row['id_produk']; ?>">	
 	   		     	<div class="col-md-6 con-sed-grid sed-left-top">
+	   		     	
 	   		     		<div class=" elit-grid"> 
-		   		     		<h4>consectetur  elit</h4>
+		   		     		<h4><?php echo $row['judul']; ?></h4>
 		   		     		<label>FOR ALL PURCHASE VALUE</label>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+							<p><?php echo currency_format($row['harga']); ?> </p>
 							<span class="on-get">GET NOW</span>
+
 						</div>		
-						<img class="img-responsive shoe-left" src="<?php echo base_url(); ?>assets/site/images/wa.jpg" alt=" " />
+						<img class="img-responsive shoe-left" src="<?php echo base_url(); ?>assets/admin/upload/<?php echo $row['foto']; ?>" alt=" " />
 						
 						<div class="clearfix"> </div>
 	   		     	</div>
-					</a>
+	   		     	<?php } ?>
+					
 					<div class="clearfix"> </div>
 	   		     </div>
 	   		     <div class="products">
