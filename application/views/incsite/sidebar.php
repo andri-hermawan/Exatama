@@ -20,7 +20,7 @@
 		<ul class="kid-menu ">
 				
 				<?php foreach($merk as $row) { ?>
-				<li><a href="<?php echo base_url()."site/merk/".$row['id_merk']; ?>"> <span class="pull-right">(13)</span><?php echo $row['merk']; ?></a></li>
+				<li><a href="<?php echo base_url()."site/merk/".$row['id_merk']; ?>"> <span class="pull-right">(<?php echo $total_merk[0]['totalmerk']; ?>)</span><?php echo $row['merk']; ?></a></li>
 				<?php } ?>
 			</ul>
 	</ul>

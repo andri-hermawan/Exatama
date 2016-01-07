@@ -101,31 +101,11 @@ class Model extends CI_Model {
 		return $this->db->query("select count(*) as totalkategori from tb_produk group by id_kat; ");
 	}
 
-	public function Kategori() {
-		$Kat = $this->db->from('tb_kategori')
-						->get();
-		return $Kat->result_array();
+	function TotalMerk(){
+		return $this->db->query("select count(*) as totalmerk from tb_produk group by id_merk; ");
 	}
 
-	function per_categori($cat) {
-		$this->db->where('id_kat',$cat);
-		$query=$this->db->get('tb_produk');
-
-		return $query->result();		
-	}
-
-	public function Merek() {
-		$Merk = $this->db->from('tb_merk')
-						->get();
-		return $Merk->result_array();
-	}
-
-	function per_merk($mer) {
-		$this->db->where('id_merk',$mer);
-		$query=$this->db->get('tb_merk');
-
-		return $query->result();		
-	}
+	
 }
 
 /* End of file model.php */

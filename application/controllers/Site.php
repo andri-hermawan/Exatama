@@ -54,7 +54,7 @@ class Site extends CI_Controller {
 	function sidebar_kat(){
 		$data = array(
 			"total_kat" => $this->model->TotalKat('')->result_array(),
-			"total_merk" => $this->model->GetProduk('group by id_merk')->num_rows(),
+			"total_merk" => $this->model->TotalMerk('')->result_array(),
 			"kategoriq" => $this->model->GetKat()->result_array(),
 			"merk" => $this->model->GetMerk()->result_array(),
 			);
@@ -158,14 +158,18 @@ class Site extends CI_Controller {
 			$data['pages'] = $this->pagination->create_links();
 
 			$datas = array(
-				
+				"sidebar" => $this->sidebar_kat(),
 				"produk"=>$this->load->view('incsite/produk',$data, TRUE),
 			// "rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 6")->result_array(),
 
 				);
-			$this->load->view('site/index', $datas);
+			$this->load->view('site/merk', $datas);
 		}
 
+	}
+
+	public function coba(){
+		$this->load->view('tes');
 	}
 
 	private function cookiesetter($kode = 0){

@@ -1,5 +1,4 @@
 <title>Big shope A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<title>Big shope A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <link href="<?php echo base_url(); ?>assets/site/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--theme-style-->
 <link href="<?php echo base_url(); ?>assets/site/css/style.css" rel="stylesheet" type="text/css" media="all" />	
