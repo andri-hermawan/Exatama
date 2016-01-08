@@ -145,7 +145,7 @@ class Site extends CI_Controller {
 		if ($cek->num_rows() > 0) {
 			$data = array(
 				"data_produk" => $this->model->GetProduk("where tb_produk.status = 'publish' and id_merk = '$id' limit ".$config['per_page']." offset ".$offset)->result_array(),
-				"rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 3")->result_array(),
+				"rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 2")->result_array(),
 				"data_setting" => $this->model->GetSetting()->result_array(),
 				);
 
@@ -246,6 +246,24 @@ class Site extends CI_Controller {
 				}
 			}
 		}
+	}
+
+	function cara_pemesanan($id_produk = '', $kode = 0)
+	{
+		$this->countervisitor();
+		$data = array(
+		"data_produk"=>$this->model->GetDetailProduk("where tb_produk.id_produk='$kode'")->result_array(),
+		"data_setting" => $this->model->GetSetting()->result_array(),
+		);
+		// $data_content =  $this->blog_model->GetContentBlog("where content.kode_content = '$kode'")->result_array();
+		$datas = array(
+			"sidebar" => $this->sidebar_kat(),
+			"detail_produks"=>$this->load->view('incsite/detail_cara_pemesanan',$data, TRUE),
+			// "rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 6")->result_array(),
+
+			);
+		$this->cookiesetter($kode);
+		$this->load->view('site/cara_pemesanan', $datas);
 	}
 
 }

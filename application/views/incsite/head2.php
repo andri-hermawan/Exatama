@@ -5,7 +5,7 @@
 				<div class="top-header-left">
 					<ul class="support">
 						<li><a href="<?php echo base_url('site/index') ?>">Home</a></li> |
-						<li><a href="#">Cara Pemesanan</a></li> |
+						<li><a href="<?php echo base_url('site/cara_pemesanan')?>">Cara Pemesanan</a></li> |
 						<li><a href="#">Tentang Kami</a></li> |
 						<li><a href="#">Hubungi Kami</a></li> 
 					</ul>
