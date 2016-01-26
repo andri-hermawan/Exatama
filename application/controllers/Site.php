@@ -262,7 +262,7 @@ class Site extends CI_Controller {
 			// "rekomen" => $this->model->GetProduk("where status = 'publish' order by rand() limit 6")->result_array(),
 
 			);
-		$this->cookiesetter($kode);
+		
 		$this->load->view('site/cara_pemesanan', $datas);
 	}
 

@@ -70,7 +70,7 @@
                       <td><?php echo currency_format($row['harga']); ?></td>
                       <td><?php echo $row['jumlah']; ?></td>
                       <td><?php echo $row['kondisi']; ?></td>
-                      <td><?php echo $row['merk']; ?></td>
+                      <td><?php echo $row['id_merk']; ?></td>
                       <td><?php echo $row['kategori']; ?></td>
                       <td><?php echo $row['tgl_input_pro']; ?></td>
                       <td>

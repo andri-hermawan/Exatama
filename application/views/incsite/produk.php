@@ -1,6 +1,6 @@
 
 					<?php foreach($rekomen as $row) { ?>
-					<a href="<?php echo base_url(); ?>site/detail/<?php echo $row['id_produk']; ?>">	
+					<a href="<?php echo base_url(); ?>site/detail/produk/<?php echo $row['id_produk']; ?>">	
 	   		     	<div class="col-md-6 con-sed-grid sed-left-top">
 	   		     	
 	   		     		<div class=" elit-grid"> 
